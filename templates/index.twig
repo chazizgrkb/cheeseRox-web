@@ -1,0 +1,17 @@
+{% extends "_layout.twig" %}
+
+{% block title %}Home{% endblock %}
+
+	{% block content %}
+<h2>cheeseRox home</h2>
+Rip bozo
+
+{% if log %}
+	<p>hi {{ userdata.name }}</p>
+{% endif %}
+
+<div class="music-list">
+	{% for song in all_songs %}Fuck you.{% endfor %}
+</div>
+<br>
+	{% endblock %}
