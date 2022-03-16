@@ -10,11 +10,27 @@
 </head>
 <body>
 	<header>
-		<div class="navbar">
-			<a href="/"><span class="title">Chaziz Codename Web</span></a>
-			<div class="links">
-				<a href="#">Some link</a>
-			</div>
+		<div class="top">
+			<a href="/"><img class="picon" src="/assets/icon.png"/></a>
+			<ul class="menu left">
+				<li><a href="/popular.php" class="btn">Popular</a></li>
+				<li><a href="/top.php" class="btn">Top</a></li>
+				<li><a href="/latest.php" class="btn">New</a></li>
+				<li><a href="/chat.php" class="btn">Chat</a></li>
+				{% if glob_forum %}<li><a href="/forum/" class="btn">Forum</a></li>{% endif %}
+				<li><a href="/contests.php" class="btn">Contests</a></li>
+				<li><a href="/search.php" class="btn"><img src="/assets/icons/search.svg" class="search"></a></li>
+				<li>
+					{% if log %}
+						{{ userlink(userdata) }}
+						{% if notification_count > 0 %}
+							<span class="notifs">[{{ notification_count }}]</span>
+						{% endif %}
+					{% else %}
+						<a href="/login.php">Login</a>
+					{% endif %}
+				</li>
+			</ul>
 		</div>
 	</header>
 

@@ -2,11 +2,15 @@
 require('lib/common.php');
 
 if (isset($_POST['logout'])) {
-	setcookie('login-token', '');
+	setcookie($cookieName, '');
 	redirect('./');
 }
 
+if ($log) redirect('./');
+
 $error = '';
+
+if (isset($_GET['resetted'])) $error .= 'Password successfully reset! Please login with your new password.';
 
 if (isset($_POST['action'])) {
 	$name = (isset($_POST['name']) ? $_POST['name'] : null);
@@ -17,7 +21,7 @@ if (isset($_POST['action'])) {
 	if (!$name || !$pass || !$logindata || !password_verify($pass, $logindata['password'])) $error .= 'Invalid credentials.';
 
 	if ($error == '') {
-		setcookie('login-token', $logindata['token'], 2147483647);
+		setcookie($cookieName, $logindata['token'], 2147483647);
 
 		redirect('./');
 	}
