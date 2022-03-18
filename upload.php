@@ -33,7 +33,7 @@ if (isset($_FILES['uploaded_file'])) {
 	}
 
 	if (!$error) {
-		query("INSERT INTO posts (title, description, author, time, recentview, tags) VALUES (?,?,?,?,?,?,?)",
+		query("INSERT INTO posts (title, description, author, time, recentview, tags) VALUES (?,?,?,?,?,?)",
 			[$title, $description, $userdata['id'], time(), time(), $tags]);
 
 		redirect('/post.php?id='.$nextId);
