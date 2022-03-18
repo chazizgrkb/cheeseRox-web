@@ -31,9 +31,6 @@ function twigloader($subfolder = '', $customloader = null, $customenv = null) {
 	$twig->addGlobal('userdata', $userdata);
 	$twig->addGlobal('notification_count', $notificationCount);
 	$twig->addGlobal('log', $log);
-	$twig->addGlobal('glob_lpp', $lpp);
-	$twig->addGlobal('glob_forum', $forumEnabled);
-	$twig->addGlobal('discord_invite', $invite);
 
 	return $twig;
 }
@@ -60,14 +57,6 @@ function error($title, $message) {
 	die();
 }
 
-function level($level, $featured = '', $pkg = false) {
-	global $cache;
-	return $cache->hit($level, function () use ($level, $featured, $pkg) {
-		$twig = twigloader('components');
-		return $twig->render('level.twig', ['level' => $level, 'featured' => $featured, 'pkg' => $pkg]);
-	});
-}
-
 function relativeTime($time) {
 	$relativeTime = new \RelativeTime\RelativeTime([
 		'language' => '\RelativeTime\Languages\English',
@@ -82,11 +71,4 @@ function relativeTime($time) {
 function redirect($url) {
 	header(sprintf('Location: %s', $url));
 	die();
-}
-
-/**
- * Is the useragent Principia's android webview useragent?
- */
-function isAndroidWebview() {
-	return str_contains($_SERVER['HTTP_USER_AGENT'], 'Principia WebView');
 }

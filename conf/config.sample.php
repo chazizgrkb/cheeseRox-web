@@ -10,8 +10,6 @@ $tplNoCache = false; // **DO NOT SET AS TRUE IN PROD - DEV ONLY**
 // Array of memcached server(s) for memcache caching. Leave empty to disable memcache caching.
 $memcachedServers = [];
 
-$basepath = '/';
-
 $tplCache = 'templates/cache';
 $tplNoCache = true; // **DO NOT SET AS TRUE IN PROD - DEV ONLY**
 
@@ -20,7 +18,7 @@ $forumEnabled = true;
 // Should dark mode be default?
 $darkModeDefault = false;
 
-// Redirect all non-internal pages to https.
+// Redirect all pages to https.
 $https = false;
 
 // Cookie token name. Don't change this too often as it'll invalidate old logins!

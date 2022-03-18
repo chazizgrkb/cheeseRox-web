@@ -7,7 +7,7 @@ function isCli() {
 	return php_sapi_name() == "cli";
 }
 
-function register($name, $pass, $mail, $sendWelcomeEmail = true) {
+function register($name, $pass, $mail) {
 	$token = bin2hex(random_bytes(20));
 	query("INSERT INTO users (name, password, email, token, joined) VALUES (?,?,?,?,?)",
 		[$name,password_hash($pass, PASSWORD_DEFAULT), $mail, $token, time()]);
