@@ -3,15 +3,15 @@
 {% block title %}Home{% endblock %}
 
 	{% block content %}
-<h2>cheeseRox home</h2>
-Rip bozo
-
-{% if log %}
-	<p>hi {{ userdata.name }}</p>
-{% endif %}
-
-<div class="music-list">
-	{% for song in all_songs %}Fuck you.{% endfor %}
+<div class="center">
+	<h2>cheeseRox Web</h2>
+	{% if log %}
+		<p>Hello, {{ userdata.name }}</p>
+	{% endif %}
+	<form id="form"> 
+	  <input type="search" id="query" name="q" placeholder="Search...">
+	  <button>Search</button>
+	</form>
 </div>
 <br>
 	{% endblock %}
