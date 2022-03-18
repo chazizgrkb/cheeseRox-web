@@ -17,21 +17,20 @@
 				<li><a href="/top.php" class="btn">Top</a></li>
 				<li><a href="/latest.php" class="btn">New</a></li>
 				<li><a href="/chat.php" class="btn">Chat</a></li>
-				{% if glob_forum %}<li><a href="/forum/" class="btn">Forum</a></li>{% endif %}
-				<li><a href="/contests.php" class="btn">Contests</a></li>
 				<li><a href="/search.php" class="btn"><img src="/assets/icons/search.svg" class="search"></a></li>
 			</ul>
 			<ul class="menu right">
-				<li>
-					{% if log %}
+				{% if log %}
+					<li>
 						{{ userlink(userdata) }}
 						{% if notification_count > 0 %}
 							<span class="notifs">[{{ notification_count }}]</span>
 						{% endif %}
-					{% else %}
-						<a href="/login.php">Login</a>
-					{% endif %}
-				</li>
+					</li>
+					<li><a href="/upload.php" class="btn">Upload</a></li>
+				{% else %}
+					<li><a href="/login.php">Login</a></li>
+				{% endif %}
 			</ul>
 		</div>
 	</header>
