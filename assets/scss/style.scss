@@ -389,10 +389,6 @@ form.reglog {
 	border: 0;
 }
 
-.center {
-	text-align: center;
-}
-
 // Pagination \\
 .pagination {
 	margin-top: 1em;
@@ -511,6 +507,14 @@ form.reglog {
 			float: right;
 		}
 	}
+}
+
+/// Cards \\\
+
+.card {
+	border: 1px solid gray;
+	background-color: white;
+	padding: 10px;
 }
 
 /// Forums \\\

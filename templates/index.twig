@@ -4,14 +4,16 @@
 
 	{% block content %}
 <div class="center">
-	<h2>cheeseRox Web</h2>
-	{% if log %}
-		<p>Hello, {{ userdata.name }}</p>
-	{% endif %}
-	<form id="form"> 
-	  <input type="search" id="query" name="q" placeholder="Search...">
-	  <button>Search</button>
-	</form>
+	<div class="card">
+		<img src="/assets/logo.png" style="width:450px;">
+		{% if log %}
+			<p>Hello, {{ userdata.name }}</p>
+		{% endif %}
+		<form id="form" action="/search.php"> 
+		  <input type="search" id="query" name="q" placeholder="Search...">
+		  <button>Search</button>
+		</form>
+	</div>
 </div>
 <br>
 	{% endblock %}
